@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, session, url_for, 
 from extensions import current_year
 
 
-main = Blueprint('main', __name__, static_folder='static', template_folder='templates')
+main = Blueprint('main', __name__, static_folder='static', template_folder='templates/main')
 
 
 @main.route('/', methods=['GET', 'POST'])
