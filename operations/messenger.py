@@ -8,7 +8,7 @@ from flask import flash
 
 
 def send_email(subject, recipients, reply_mail, body, html, image_dict):
-    message = Message(subject, sender=("SHWETABH SUMAN", 'shwetabhartist@gmail.com'), recipients=recipients, reply_to=reply_mail)
+    message = Message(subject, sender=("ALAKH VIGYANI", 'mail_of_Alakh_Vigyani'), recipients=recipients, reply_to=reply_mail)
     message.body = body
     if html:
         message.html = html
