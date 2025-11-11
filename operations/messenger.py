@@ -6,9 +6,10 @@ from urllib.parse import quote
 import os
 from flask import flash
 
+sender_mail = os.environ.get('MAIL_USERNAME')
 
 def send_email(subject, recipients, reply_mail, body, html, image_dict):
-    message = Message(subject, sender=("ALAKH VIGYANI", 'mail_of_Alakh_Vigyani'), recipients=recipients, reply_to=reply_mail)
+    message = Message(subject, sender=("ALAKH VIGYANI", sender_mail), recipients=recipients, reply_to=reply_mail)
     message.body = body
     if html:
         message.html = html
