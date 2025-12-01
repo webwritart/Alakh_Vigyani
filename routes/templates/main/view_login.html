@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    #contact-bg {
+        background: url(static/images/home/Baba_Bhairav_Dance_sm-f.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    #contact-bg form {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2% 5% 5% 5%;
+    }
+    #captcha {
+        display:flex;
+        width:100%;
+        padding-bottom:1%;
+        justify-content: space-between;
+    }
+    #captcha div {
+        width: 50%;
+    }
+    #captcha_input {
+        width:48%;
+    }
+</style>
+<div style="width:100%;">
+    <p class="heading-large text-center"> TEAM-ONLY ZONE</p>
+    <div class="full-page-form-container form-main" id="view-form">
+        <form action="{{ url_for('main.captcha_verification') }}" method="post">
+            <input type="text" name="pwd" placeholder="Password" required>
+            <div id="captcha">
+                <div style="display:flex; justify-content:center;"><img src="{{captcha}}" width="350" height="50"></div>
+                <input id="captcha_input" type="text" name="captcha" placeholder="Enter Captcha" required>
+            </div>
+            <button class="btn-1" type="submit">VIEW WEBSITE</button>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                  <div class="{{category}}" style="background:black;">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </form>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

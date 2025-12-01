@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    #coming-soon {
+        background: url(static/images/coming_soon.jpg) center center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+    #coming-soon button {
+        margin-top: 45vh;
+        background: black;
+        color: white;
+        border: none;
+        padding: 2% 5%;
+        width: 50vw;
+        text-decoration: none;
+    }
+</style>
+
+<div id="coming-soon">
+    <a href="{{url_for('main.team_login')}}"><button class="btn-1">TEAM LOGIN</button></a>
+</div>
+
+{% endblock %}
