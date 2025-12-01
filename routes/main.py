@@ -29,7 +29,7 @@ def captcha_verification():
         captcha_value = session.get('captcha_value')
         if request.form.get('captcha') != captcha_value:
             flash("Wrong Captcha!", "error")
-            return redirect(request.url)
+            return redirect(url_for('main.team_login'))
         else:
             # name = request.form.get('name')
             # email = request.form.get('email')
@@ -53,5 +53,5 @@ def captcha_verification():
                 return redirect(session.get('url'))
             else:
                 flash("Wrong Password!", "error")
-                return redirect(request.url)
+                return redirect(url_for('main.team_login'))
     return redirect(session.get('url'))
