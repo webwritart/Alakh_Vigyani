@@ -7,6 +7,7 @@ from routes.main import main
 from routes.school import school
 from routes.writings import writings
 from routes.about import about
+from routes.spiritual import spiritual
 
 
 load_dotenv()
@@ -22,6 +23,7 @@ mail.init_app(app)
 
 
 app.register_blueprint(main, url_prefix='/')
+app.register_blueprint(spiritual, url_prefix='/spiritual')
 app.register_blueprint(school, url_prefix='/school')
 app.register_blueprint(writings, url_prefix='/writings')
 app.register_blueprint(about, url_prefix='/about')

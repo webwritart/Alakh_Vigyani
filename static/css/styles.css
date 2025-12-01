@@ -19,6 +19,18 @@ body {
 .text-right {
     text-align: right;
 }
+.text-bold {
+    text-size: .75rem;
+    font-weight: bold;
+}
+.text-medium {
+    text-size: .75rem;
+    font-weight: 600;
+}
+.text-normal {
+    text-size: .75rem;
+    font-weight: 400;
+}
 
 /* -------------------------------------------------------- HEADINGS ------------------------------------------------ */
 .heading-medium {
