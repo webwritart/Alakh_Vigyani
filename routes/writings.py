@@ -7,4 +7,8 @@ writings = Blueprint('writings', __name__, static_folder='static', template_fold
 
 @writings.route('/writings', methods=['GET', 'POST'])
 def home():
-    return render_template('writings.html', current_year=current_year)
+    session['url'] = request.url
+    if 'view' not in session:
+        return redirect(url_for('main.coming_soon'))
+    else:
+        return render_template('writings.html', current_year=current_year)

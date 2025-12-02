@@ -1,5 +1,8 @@
+import functools
 import os
+from functools import wraps
 
+from flask import redirect, session, url_for
 from PIL import Image
 from datetime import datetime
 import random
@@ -115,7 +118,5 @@ def generate_captcha():
     encoded_string = encoded_data_bytes.decode('utf-8')
     captcha_uri = f"data:image/png;base64, {encoded_string}"
     return captcha_num, captcha_uri
-
-
 
 

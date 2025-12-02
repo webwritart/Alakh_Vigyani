@@ -5,6 +5,11 @@ from operations.miscellaneous import generate_captcha
 main = Blueprint('main', __name__, static_folder='static', template_folder='templates/main')
 
 
+@main.route('/coming_soon', methods=['GET', 'POST'])
+def coming_soon():
+    return render_template('coming_soon.html', current_year=current_year)
+
+
 @main.route('/', methods=['GET', 'POST'])
 def home():
     session['url'] = request.url
@@ -12,7 +17,6 @@ def home():
         return render_template('coming_soon.html', current_year=current_year)
     else:
         return render_template('index.html', current_year=current_year)
-
 
 @main.route('/team_login', methods=['GET', 'POST'])
 def team_login():

@@ -5,6 +5,11 @@ from extensions import current_year
 school = Blueprint('school', __name__, static_folder='static', template_folder='templates/school')
 
 
+
 @school.route('/school', methods=['GET', 'POST'])
 def home():
-    return render_template('school.html', current_year=current_year)
+    session['url'] = request.url
+    if 'view' not in session:
+        return redirect(url_for('main.coming_soon'))
+    else:
+        return render_template('school.html', current_year=current_year)

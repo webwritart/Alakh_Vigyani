@@ -10,6 +10,7 @@ from routes.spiritual import spiritual
 from routes.photography import photography
 
 
+
 load_dotenv()
 
 app = Flask(__name__)
