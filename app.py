@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask
 from dotenv import load_dotenv
 from extensions import mail
@@ -8,6 +7,7 @@ from routes.school import school
 from routes.writings import writings
 from routes.about import about
 from routes.spiritual import spiritual
+from routes.photography import photography
 
 
 load_dotenv()
@@ -23,6 +23,7 @@ mail.init_app(app)
 
 
 app.register_blueprint(main, url_prefix='/')
+app.register_blueprint(photography, url_prefix='/photography')
 app.register_blueprint(spiritual, url_prefix='/spiritual')
 app.register_blueprint(school, url_prefix='/school')
 app.register_blueprint(writings, url_prefix='/writings')
