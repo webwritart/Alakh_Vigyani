@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, session, url_for, redirect
-from extensions import current_year
+from extensions import current_year, db
 from operations.miscellaneous import generate_captcha
+from models.member import Role
 
 main = Blueprint('main', __name__, static_folder='static', template_folder='templates/main')
 
@@ -16,6 +17,19 @@ def home():
     if 'view' not in session:
         return render_template('coming_soon.html', current_year=current_year)
     else:
+        data = {
+            'super-admin': 'Has complete administrative control',
+            'admin': 'Has limited administrative control',
+            'member': 'Is a common member'
+        }
+        for role in data:
+            description = data[role]
+            new_role = Role(
+                name=role,
+                description=description
+            )
+            db.session.add(new_role)
+        db.session.commit()
         return render_template('index.html', current_year=current_year)
 
 @main.route('/team_login', methods=['GET', 'POST'])
@@ -59,3 +73,8 @@ def captcha_verification():
                 flash("Wrong Password!", "error")
                 return redirect(url_for('main.team_login'))
     return redirect(session.get('url'))
+
+
+@main.route('/privacy_policy')
+def privacy_policy():
+    return render_template('privacy_policy.html', current_year=current_year)

@@ -1,58 +1,14 @@
 import functools
 import os
 from functools import wraps
-
+import datetime
 from flask import redirect, session, url_for
 from PIL import Image
 from datetime import datetime
+from datetime import date
 import random
 from captcha.image import ImageCaptcha
 import base64
-
-
-def log(text, category):
-    today = str(datetime.today())
-    if category == 'error':
-        text = f"        <p style='line-height:0.1;'> {today} - <span style='color:red;'>{text}</span> </p>\n"
-    elif category == 'success':
-        text = f"        <p style='line-height:0.1;'> {today} - <span style='color:green;'>{text}</span> </p>\n"
-    elif category == 'routine':
-        text = f"        <p style='line-height:0.1;'> {today} - <span style='color:yellow;'>{text}</span> </p>\n"
-    elif category == 'none':
-        text = f"        <p style='line-height:0.1;'> {today} - <span style='color:white;'>{text}</span> </p>\n"
-    with open("./routes/templates/manager/log.html", "r") as f:
-        contents = f.readlines()
-        lines = len(contents)
-        index = lines - 3
-        contents.insert(index, text)
-    with open("./routes/templates/manager/log.html", "w") as f:
-        contents = "".join(contents)
-        f.write(contents)
-        f.close()
-    print("logged into log.txt successfully")
-
-
-def delete_log(date):
-    try:
-        with open("./routes/templates/manager/log.html", "r") as f:
-            contents = f.readlines()
-        with open("./routes/templates/manager/log.html", "w") as f:
-            for line in contents:
-                if "<p" in line:
-                    log_date = log_date.replace("<p style='line-height:0.1;'> ", "")
-                    log_date = log_date.replace(" - <span style='color:red;'>", "")
-                    log_date = log_date.replace("</span> <p>", "")
-                    log_date = log_date.split(" ")
-                    log_date = log_date[0]
-                    if not log_date <= date:
-                        f.write(line)
-                else:
-                    f.write(line)
-        f.close()
-        log("Successfully deleted log", "success")
-    except Exception as e:
-        log("Error in deleting log", "error")
-
 
 def resize_image(input_folder, size_f_t, output_folder):
     global new_height, output_filepath
@@ -120,3 +76,9 @@ def generate_captcha():
     return captcha_num, captcha_uri
 
 
+def calculate_age(birthdate):
+    year, month, day = map(int, birthdate.split("-"))
+    today = date.today()
+    print(today)
+    age = today.year - year - ((today.month, today.day) < (month, day))
+    return age

@@ -8,6 +8,7 @@ body {
 	font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
 }
+
 /* ----------------------------------------------------- NAVBAR ---------------------------------------------------- */
 
 header a, header a:hover {
@@ -162,6 +163,9 @@ ul li:hover {
     transform: scale(0.99);
     color:white;
 }
+.btn-1 a {
+    text-decoration:none;
+}
 
 .btn-gray {
     border: none;
@@ -270,6 +274,7 @@ ul li:hover {
 .white-color {
     color: #FFFFFF;
 }
+
 
 
 /* ------------------------------------------------------ FOOTER ------------------------------------------------- */
@@ -391,6 +396,7 @@ ul li:hover {
         padding: 2% 20%;
         width: 100%;
     }
+
 /* ---------------------------------------------------- RESPONSIVE -------------------------------------------------- */
 @media only screen and (max-width: 600px) {
     header nav {
