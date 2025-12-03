@@ -8,6 +8,7 @@ from routes.writings import writings
 from routes.about import about
 from routes.spiritual import spiritual, retreats
 from routes.photography import photography
+from routes.account import account
 from models.member import Member, Role
 
 
@@ -28,6 +29,7 @@ login_manager.init_app(app)
 
 
 app.register_blueprint(main, url_prefix='/')
+app.register_blueprint(account, url_prefix='/account')
 app.register_blueprint(photography, url_prefix='/photography')
 app.register_blueprint(spiritual, url_prefix='/spiritual')
 app.register_blueprint(school, url_prefix='/school')
