@@ -1,59 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 <style>
-    #contact-bg {
-        background: url(static/images/home/Baba_Bhairav_Dance_sm-f.jpg) center center no-repeat;
-        background-size: cover;
-    }
-    #contact-bg form {
-        background: rgba(0, 0, 0, 0.5);
-        padding: 2% 5% 5% 5%;
-    }
-    #contact-bg form input {
-        background: white;
-    }
-    #captcha {
-        display:flex;
-        width:100%;
-        padding-bottom:1%;
-        justify-content: space-between;
-    }
-    #captcha div {
-        width: 50%;
-    }
-    #captcha_input {
-        width:48%;
-        background: white;
-        border: 3px solid #e5bde6;
-        color: #9e3ea2;
-    }
-    #pwd-inp {
-        background: white;
-        border: 3px solid #e5bde6;
-        color: #9e3ea2;
-    }
-    #pwd-inp:active {
-    .form-main ::placeholder {
-        color: #d393d6;
-        opacity: 1; /* Firefox */
-}
-
-    }
-    .btn-1 {
-        background:#925f94;
-        color: white;
-    }
-    .btn-1:hover {
-        background: #a34ca7;
-        color: white;
-    }
+<!--    #contact-bg {-->
+<!--        background: url(static/images/home/Baba_Bhairav_Dance_sm-f.jpg) center center no-repeat;-->
+<!--        background-size: cover;-->
+<!--    }-->
+<!--    #contact-bg form {-->
+<!--        background: rgba(0, 0, 0, 0.5);-->
+<!--        padding: 2% 5% 5% 5%;-->
+<!--    }-->
+<!--    #contact-bg form input {-->
+<!--        background: white;-->
+<!--    }-->
 </style>
-<div style="width:100%;">
-    <div class="full-page-form-container form-main" id="view-form">
+<div class="full-page-div">
+    <div class="default-form-container">
     <p class="heading-large text-center"> TEAM-ONLY ZONE</p>
-        <form style="width:40%;" action="{{ url_for('main.captcha_verification') }}" method="post">
-            <input id="pwd-inp" type="text" name="pwd" placeholder="Password" required>
-            <div id="captcha">
+        <form class="form-main" action="{{ url_for('main.captcha_verification') }}" method="post">
+            <input type="text" name="pwd" placeholder="Password" required>
+            <div class="captcha-img">
                 <div style="display:flex; justify-content:center;"><img src="{{captcha}}" width="350" height="50"></div>
                 <input id="captcha_input" type="text" name="captcha" placeholder="Enter Captcha" required>
             </div>
@@ -65,7 +30,6 @@
                 {% endfor %}
             {% endif %}
             {% endwith %}
-        </form>
         </form>
     </div>
 </div>

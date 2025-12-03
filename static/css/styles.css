@@ -8,154 +8,6 @@ body {
 	font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
 }
-
-/* --------------------------------------------------------- TEXT --------------------------------------------------- */
-.text-center {
-    text-align: center;
-}
-.text-left {
-    text-align: left;
-}
-.text-right {
-    text-align: right;
-}
-.text-bold {
-    text-size: .75rem;
-    font-weight: bold;
-}
-.text-medium {
-    text-size: .75rem;
-    font-weight: 600;
-}
-.text-normal {
-    text-size: .75rem;
-    font-weight: 400;
-}
-
-/* -------------------------------------------------------- HEADINGS ------------------------------------------------ */
-.heading-medium {
-    font-size: 2rem;
-    font-weight: 400;
-}
-.heading-small {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-.heading-large {
-    font-size: 2.5rem;
-    font-weight: 400;
-}
-.heading-extra-large {
-    font-size: 3.5rem;
-    font-weight: 400;
-}
-
-/* --------------------------------------------------------- BUTTONS ------------------------------------------------ */
-.btn-1 {
-    background: #511B59;
-    color: #C68ACF;
-    border: none;
-    transition: all 0.15s ease-in-out;
-    padding:1% 0%;
-    width: 100%;
-    text-decoration: none;
-}
-.btn-1:hover {
-    background: #61146B;
-    transform: scale(0.99);
-    color:#DDACE3;
-}
-
-.btn-gray {
-    border: none;
-    background: #898989;
-    color: white;
-    width: 100%;
-    padding: 1% 0%;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-}
-.btn-gray:hover {
-    transform: scale(1.02);
-}
-.complete-profile {
-    font-size: 2rem;
-}
-.whatsapp {
-    width: 80%;
-    background:green;
-    text-decoration: none;
-}
-.whatsapp:hover {
-    background:#2a5e14;
-    text-decoration: none;
-}
-/* --------------------------------------------------- FORMS-CONTAINERS --------------------------------------------- */
-.full-page-form-container {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
-}
-.full-page-form-container form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-.default-form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.default-form-container form {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding:1% 0%;
-}
-
-/* ------------------------------------------------------ FORM-DESIGNS ---------------------------------------------- */
-.form-main label {
-    color: #B27EB3;
-    margin: 0.5% 0%;
-}
-.form-main input, textarea {
-    background: #f8e3f9;
-    border: 1px solid #e5bde6;
-    color: #B27EB3;
-    margin: 0.5% 0%;
-}
-.form-main ::placeholder {
-    color: #B27EB3;
-    opacity: 1; /* Firefox */
-}
-.form-main select {
-    background: #f8e3f9;
-    border: 1px solid #e5bde6;
-    color: #B27EB3;
-    margin: 0.5% 0%;
-}
-
-/* ------------------------------------------------------ DIV ------------------------------------------------------- */
-.full-page-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-/* ----------------------------------------------------- COLORS ----------------------------------------------------- */
-.violet-color {
-    color: #9f2ca2;
-}
-.red-color {
-    color: #d3333c;
-}
-.white-color {
-    color: #FFFFFF;
-}
 /* ----------------------------------------------------- NAVBAR ---------------------------------------------------- */
 
 header a, header a:hover {
@@ -254,6 +106,172 @@ ul li:hover {
     padding-bottom: 5%;
 }
 
+/* --------------------------------------------------------- TEXT --------------------------------------------------- */
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-bold {
+    text-size: .75rem;
+    font-weight: bold;
+}
+.text-medium {
+    text-size: .75rem;
+    font-weight: 600;
+}
+.text-normal {
+    text-size: .75rem;
+    font-weight: 400;
+}
+
+/* -------------------------------------------------------- HEADINGS ------------------------------------------------ */
+.heading-medium {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.heading-small {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.heading-large {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.heading-extra-large {
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+/* --------------------------------------------------------- BUTTONS ------------------------------------------------ */
+.btn-1 {
+    background: black;
+    color: white;
+    border: none;
+    transition: all 0.15s ease-in-out;
+    padding:1% 0%;
+    width: 100%;
+    text-decoration: none;
+}
+.btn-1:hover {
+    background: black;
+    transform: scale(0.99);
+    color:white;
+}
+
+.btn-gray {
+    border: none;
+    background: #898989;
+    color: white;
+    width: 100%;
+    padding: 1% 0%;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.btn-gray:hover {
+    transform: scale(1.02);
+}
+.complete-profile {
+    font-size: 2rem;
+}
+.whatsapp {
+    width: 80%;
+    background:green;
+    text-decoration: none;
+}
+.whatsapp:hover {
+    background:#2a5e14;
+    text-decoration: none;
+}
+/* --------------------------------------------------- FORMS-CONTAINERS --------------------------------------------- */
+.full-page-form-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+.full-page-form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.default-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.default-form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding:1% 0%;
+}
+
+/* ------------------------------------------------------ FORM-DESIGNS ---------------------------------------------- */
+.form-main label {
+    color: black;
+    margin: 0.5% 0%;
+}
+.captcha-img #captcha_input {
+        width:48%;
+        background: none;
+        border: 3px solid grey;
+        color: black;
+}
+.captcha-img {
+    display:flex;
+    width:100%;
+    padding-bottom:1%;
+    justify-content: space-between;
+}
+.captcha-img div {
+        width: 50%;
+    }
+.form-main input, textarea {
+    background: none;
+    border: 3px solid grey;
+    color: black;
+    margin: 0.5% 0%;
+}
+.form-main ::placeholder {
+    color: grey;
+    opacity: 1; /* Firefox */
+}
+.form-main select {
+    background: #f8e3f9;
+    border: 1px solid #e5bde6;
+    color: #B27EB3;
+    margin: 0.5% 0%;
+}
+
+/* ------------------------------------------------------ DIV ------------------------------------------------------- */
+.full-page-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width:100%;
+}
+
+/* ----------------------------------------------------- COLORS ----------------------------------------------------- */
+.violet-color {
+    color: #9f2ca2;
+}
+.red-color {
+    color: #d3333c;
+}
+.white-color {
+    color: #FFFFFF;
+}
+
+
 /* ------------------------------------------------------ FOOTER ------------------------------------------------- */
 
 #footer {
@@ -317,6 +335,9 @@ ul li:hover {
         width: 100%;
         padding: 0% 2% 2% 2%;
     }
+    .default-form-container form {
+        width: 80%;
+    }
 }
 @media only screen and (min-width: 600px) {
     .full-page-form-container form {
@@ -329,11 +350,17 @@ ul li:hover {
         font-size: 1.7rem;
         font-weight: 400;
     }
+    .default-form-container form {
+        width: 50%;
+    }
 }
 @media only screen and (min-width: 900px) {
     .heading-large {
         font-size: 2.1rem;
         font-weight: 400;
+    }
+    .default-form-container form {
+        width: 40%;
     }
 }
 
@@ -349,7 +376,6 @@ ul li:hover {
         font-weight: 400;
     }
 }
-
 @media only screen and (min-width: 1920px) {
     .full-page-form-container form {
         width: 40%;
@@ -362,7 +388,6 @@ ul li:hover {
         font-weight: 400;
     }
 }
-
 @media only screen and (min-width: 2500px) {
     .full-page-form-container form {
         width: 30%;
