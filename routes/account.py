@@ -230,7 +230,7 @@ def login():
                 flash("You are successfully logged in. Now proceed to change password", "success")
                 return redirect(url_for('account.change_password'))
             return redirect(url_for('account.home', name=current_user.name.split()[0]))
-    return render_template('login.html', current_year=current_year)
+    return render_template('login.html', current_year=current_year, instruction='Log In')
 
 
 @account.route('/logout')

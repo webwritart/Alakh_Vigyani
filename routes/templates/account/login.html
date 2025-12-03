@@ -3,7 +3,7 @@
 
   <div class="full-page-form-container">
     <form class="form-main" action="{{ url_for('account.login') }}" method="post">
-      <h2>{{ instruction }}</h2>
+      <p class="heading-medium text-center">{{ instruction }}</p>
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
               {% for category, message in messages %}
