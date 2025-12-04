@@ -18,11 +18,26 @@ def home():
     if 'view' not in session:
         return render_template('coming_soon.html', current_year=current_year)
     else:
-        # super_admin = db.session.query(Role).filter_by(name='super-admin').scalar()
-        # print(super_admin)
-        # current_user.role.append(super_admin)
+        super_admin = db.session.query(Role).filter_by(name='super-admin').scalar()
+        admin = db.session.query(Role).filter_by(name='admin').scalar()
+        # data = {
+        #     'super-admin': 'Has complete administrative control',
+        #     'admin': 'Has limited administrative control',
+        #     'member': 'Is a common member'
+        # }
+        # for role in data:
+        #     name = role
+        #     description = data[role]
+        #
+        #     entry = Role(
+        #         name=name,
+        #         description=description
+        #     )
+        #     db.session.add(entry)
         # db.session.commit()
-        return render_template('index.html', logged_in=current_user.is_authenticated, current_year=current_year)
+
+        return render_template('index.html', logged_in=current_user.is_authenticated, current_year=current_year,
+                               admin=admin, super_admin=super_admin)
 
 @main.route('/team_login', methods=['GET', 'POST'])
 def team_login():

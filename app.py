@@ -9,7 +9,8 @@ from routes.about import about
 from routes.spiritual import spiritual, retreats
 from routes.photography import photography
 from routes.account import account
-from models.member import Member, Role
+from routes.admin_panel import admin_panel
+from models.member import Member, Role, Retreat, RetreatFeedbacks, RetreatSuggestions
 
 
 load_dotenv()
@@ -35,6 +36,7 @@ app.register_blueprint(spiritual, url_prefix='/spiritual')
 app.register_blueprint(school, url_prefix='/school')
 app.register_blueprint(writings, url_prefix='/writings')
 app.register_blueprint(about, url_prefix='/about')
+app.register_blueprint(admin_panel, url_prefix='/admin_panel')
 
 with app.app_context():
     db.create_all()

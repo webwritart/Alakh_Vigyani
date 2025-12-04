@@ -36,7 +36,11 @@
         <li><a style="color:#B06D35;" href="{{ url_for('account.login') }}">LOGIN/REGISTER</a></li>
         {% else %}
         <li><a href="{{ url_for('account.logout') }}">LOGOUT</a></li>
+        {% if admin in current_user.role or super_admin in current_user.role %}
+        <li><a style="color:red;" href="{{ url_for('admin_panel.main_dashboard') }}">ADMIN-PANEL</a></li>
         {% endif %}
+        {% endif %}
+
       </ul>
     </nav>
     <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -49,6 +53,16 @@
         <li><a href="{{ url_for('photography.home') }}">PHOTOGRAPHY</a></li>
         <li><a href="{{ url_for('writings.home') }}">WRITINGS</a></li>
         <li><a href="{{ url_for('about.home') }}">ABOUT</a></li>
+        {% if not logged_in %}
+        <li><a style="color:#B06D35;" href="{{ url_for('account.login') }}">LOGIN/REGISTER</a></li>
+        {% else %}
+        <li><a href="{{ url_for('account.logout') }}">LOGOUT</a></li>
+        {% if admin in current_user.role %}
+        <li><a style="color:red;" href="{{ url_for('admin_panel.main_dashboard') }}">ADMIN-PANEL</a></li>
+        {% elif super_admin in current_user.role %}
+        <li><a style="color:red;" href="{{ url_for('admin_panel.main_dashboard') }}">ADMIN-PANEL</a></li>
+        {% endif %}
+        {% endif %}
       </ul>
     </div>
   </header>
