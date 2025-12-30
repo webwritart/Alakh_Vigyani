@@ -1,0 +1,60 @@
+{% extends "main_dashboard.html" %}
+{% block sub_dashboard %}
+
+<style>
+.operations-menu-column button {
+    padding:1% 0%;
+    margin: 3% 0%;
+}
+</style>
+
+<p class="admin-page-heading heading-medium text-center ">RETREATS ADMIN-PANEL</p>
+<div class="full-width-div admin-panel-container">
+    <div class="operations-menu-column text-center">
+        <p class="heading-small teal-color">OPERATIONS</p>
+        <button class="btn-teal">NEW RETREAT</button>
+        <button class="btn-teal">EDIT RETREAT</button>
+
+    </div>
+    <div class="operations-canvas-column">
+        <div class="default-form-container">
+            <form id="newRetreat" style="width:80%;" action="{{ url_for('admin_panel.new_retreat_datafeed') }}">
+                <p class="heading-small text-center"> CREATE NEW RETREAT</p>
+                <input type="text" name="title" placeholder="Retreat Title" required>
+                <input type="text" name="subtitle" placeholder="Subtitle">
+                <input type="text" name="date" placeholder="Date (from and to)">
+                <input type="text" name="v1" placeholder="Venue line 1">
+                <input type="text" name="v2" placeholder="Venue line 2">
+                <input type="text" name="v3" placeholder="Venue line 3">
+                <input type="text" name="city_country_pin" placeholder="City, Country and Pin">
+                <input type="text" name="landmark" placeholder="Landmark">
+                <input type="text" name="a1" placeholder="Activity 1">
+                <input type="text" name="a2" placeholder="Activity 2">
+                <input type="text" name="a3" placeholder="Activity 3">
+                <input type="text" name="a4" placeholder="Activity 4">
+                <input type="text" name="a5" placeholder="Activity 5">
+                <input type="text" name="a6" placeholder="Activity 6">
+                <input type="text" name="a7" placeholder="Activity 7">
+                <input type="text" name="a8" placeholder="Activity 8">
+                <input type="text" name="a9" placeholder="Activity 9">
+                <textarea rows="3" name="prerequisites">Prerequisites</textarea>
+                <textarea rows="3" name="stuffs_to_bring">Stuffs to bring</textarea>
+                <textarea rows="3" name="accommodation">Accommodation</textarea>
+                <textarea rows="3" name="local_commutation">Local commutation</textarea>
+                <input type="text" name="charges" placeholder="Charges">
+                <input type="text" name="contact" placeholder="Contact">
+                <input type="text" name="contact" placeholder="team">
+                <textarea rows="3" name="rules">Rules</textarea>
+                <input type="number" name="total_seats" placeholder="Total Seats">
+                <input type="number" name="early_bird_seats" placeholder="Early bird seats">
+                <button class="btn-teal" type="submit">Add to database</button>
+            </form>
+        </div>
+    </div>
+    <div class="status-column">
+
+    </div>
+</div>
+
+<!--<script src="script.js" defer></script>-->
+{% endblock %}

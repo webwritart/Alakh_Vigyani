@@ -1,8 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
-    <p class="heading-medium text-center">ADMIN PANEL</p>
+<style>
+    .submenu {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2% 0% 0% 0%;
+        padding-bottom: 1%;
+    }
+    .submenu_buttons {
+        transition: all 0.15s ease-in-out;
+        background: #579C9C;
+        border: none;
+        padding: .3% 1%;
+        margin: 1%;
+        color:white;
+        border-radius: 3px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .5)
+
+    }
+    .submenu_buttons:hover {
+        border:none;
+        color: white;
+        background:#03A6A6;
+        text-decoration:none;
+        transform: scale(1.1);
+    }
+</style>
+<div style="background: #D4C3AE; box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);">
+<p class="heading-medium text-center" style="opacity:.5;">ADMIN PANEL</p>
+    <div class="submenu">
+        <a class="submenu_buttons" href="{{ url_for('admin_panel.homepage') }}"> HOMEPAGE </a>
+        <a class="submenu_buttons" href="{{ url_for('admin_panel.retreats') }}"> RETREATS </a>
+        <a class="submenu_buttons" href="{{ url_for('admin_panel.school') }}"> SCHOOL </a>
+        <a class="submenu_buttons" href="{{ url_for('admin_panel.photography') }}"> PHOTO-ESSAYS </a>
+        <a class="submenu_buttons" href="{{ url_for('admin_panel.blog') }}"> BLOG </a>
+    </div>
 </div>
+
+{% block sub_dashboard %}
+{% endblock %}
 
 {% endblock %}

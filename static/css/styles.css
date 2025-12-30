@@ -191,6 +191,42 @@ ul li:hover {
     background:#2a5e14;
     text-decoration: none;
 }
+
+.btn-teal {
+    background: teal;
+    color: white;
+    border: 1px solid #C2FFFF;
+    transition: all 0.15s ease-in-out;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.btn-teal:hover {
+    background: teal;
+    text-decoration: none;
+    color:white;
+    transform: scale(1.05);
+
+
+}
+
+.btn-blog-admin-operations {
+    background: #636363;
+    color: white;
+    border: 1px solid #C2FFFF;
+    transition: all 0.15s ease-in-out;
+    width: 100%;
+    text-decoration: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.btn-blog-admin-operations:hover {
+    background: #636363;
+    text-decoration: none;
+    color:white;
+    transform: scale(1.05);
+
+
+}
 /* --------------------------------------------------- FORMS-CONTAINERS --------------------------------------------- */
 .full-page-form-container {
     display: flex;
@@ -263,6 +299,13 @@ ul li:hover {
     height: 90vh;
     width:100%;
 }
+.full-width-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1% 5%;
+}
 
 /* ----------------------------------------------------- COLORS ----------------------------------------------------- */
 .violet-color {
@@ -273,6 +316,9 @@ ul li:hover {
 }
 .white-color {
     color: #FFFFFF;
+}
+.teal-color {
+    color: teal;
 }
 
 
@@ -319,6 +365,39 @@ ul li:hover {
 }
 .error {
     color: red;
+}
+
+/* --------------------------------------------------- ADMIN-PANEL -------------------------------------------------- */
+.admin-page-heading {
+        margin-top:0.5%;
+        padding-top:0.5%;
+    }
+.admin-panel-container {
+    height: 70vh;
+}
+.operations-menu-column {
+    width: 20%;
+    height: 100%;
+    background:#C2FFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    padding: 2%;
+}
+.operations-canvas-column {
+    width: 40%;
+    height: 100%;
+    border: 3px solid #C2FFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.status-column {
+    width: 40%;
+    height: 100%;
+    background: #3A4F4F;
 }
 
 /* ---------------------------------------------------- OTHER CSS --------------------------------------------------- */
