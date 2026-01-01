@@ -46,6 +46,7 @@ class Role(db.Model):
 class Retreat(db.Model):
     id=db.Column(db.Integer, primary_key=True)
     uuid=db.Column(db.Integer, unique=True)
+    status = db.Column(db.String(50))
     title = db.Column(db.String(100))
     subtitle = db.Column(db.String(200))
     date = db.Column(db.String(60))
