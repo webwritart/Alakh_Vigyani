@@ -68,6 +68,12 @@ def submit_new_retreat():
             total_seats = request.form.get('total_seats')
             early_bird_seats = request.form.get('early_bird_seats')
             uuid = uuid_generator('Retreat')
+
+            if total_seats == '':
+                total_seats = 0
+            if early_bird_seats == '':
+                early_bird_seats = 0
+
             entry = Retreat(
                 uuid=uuid,
                 title=title,
