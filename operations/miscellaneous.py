@@ -9,6 +9,10 @@ from datetime import date
 import random
 from captcha.image import ImageCaptcha
 import base64
+from extensions import db
+from models.member import *
+from models.blog import *
+
 
 def resize_image(input_folder, size_f_t, output_folder):
     global new_height, output_filepath
@@ -82,3 +86,19 @@ def calculate_age(birthdate):
     print(today)
     age = today.year - year - ((today.month, today.day) < (month, day))
     return age
+
+def uuid_generator(table_name):
+    uuid_list = []
+
+    result = db.session.query(eval(table_name)).all()
+    print(result)
+    for row in result:
+        uuid_list.append(row.uuid)
+    unique = False
+    uuid = ''
+    while not unique:
+        u = random.randint(100000, 999999)
+        if u not in uuid_list:
+            uuid = u
+            unique = True
+    return uuid

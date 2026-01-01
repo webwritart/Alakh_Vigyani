@@ -18,8 +18,8 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('APP_SECRET')
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///alakh.db"
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
+# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///alakh.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
@@ -48,5 +48,5 @@ def load_user(member_id):
 
 
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0', port=5000)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+    # app.run(debug=True)

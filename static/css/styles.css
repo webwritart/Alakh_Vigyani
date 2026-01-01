@@ -132,7 +132,7 @@ ul li:hover {
 
 /* -------------------------------------------------------- HEADINGS ------------------------------------------------ */
 .heading-medium {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 .heading-small {
@@ -373,10 +373,12 @@ ul li:hover {
         padding-top:0.5%;
     }
 .admin-panel-container {
-    height: 70vh;
+    height: auto;
+    display:flex;
+    flex-direction:column;
 }
 .operations-menu-column {
-    width: 20%;
+    width: 100%;
     height: 100%;
     background:#C2FFFF;
     display: flex;
@@ -385,8 +387,12 @@ ul li:hover {
     justify-content: stretch;
     padding: 2%;
 }
+.operations-menu-column button {
+    padding:1% 0%;
+    margin: 0% 0%;
+}
 .operations-canvas-column {
-    width: 40%;
+    width: 100%;
     height: 100%;
     border: 3px solid #C2FFFF;
     display: flex;
@@ -395,7 +401,7 @@ ul li:hover {
     overflow: auto;
 }
 .status-column {
-    width: 40%;
+    width: 100%;
     height: 100%;
     background: #3A4F4F;
 }
@@ -536,6 +542,9 @@ ul li:hover {
         font-size: 2.1rem;
         font-weight: 400;
     }
+    .heading-medium {
+        font-size: 1.7rem;
+    }
     .default-form-container form {
         width: 40%;
     }
@@ -549,6 +558,35 @@ ul li:hover {
     .retreat-activities-card {
         width: 30%;
         height: 100px;
+    }
+    .admin-panel-container {
+        height: 80vh;
+        display:flex;
+        flex-direction:row;
+    }
+    .operations-menu-column {
+        width: 20%;
+        height: 100%;
+        background:#C2FFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+        padding: 2%;
+    }
+    .operations-canvas-column {
+        width: 40%;
+        height: 100%;
+        border: 3px solid #C2FFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+    }
+    .status-column {
+        width: 40%;
+        height: 100%;
+        background: #3A4F4F;
     }
 }
 
@@ -567,6 +605,9 @@ ul li:hover {
 @media only screen and (min-width: 1920px) {
     .full-page-form-container form {
         width: 40%;
+    }
+    .heading-medium {
+        font-size: 2rem;
     }
     .whatsapp {
         width: 40%;
