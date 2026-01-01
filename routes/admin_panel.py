@@ -95,8 +95,8 @@ def submit_new_retreat():
                 contact=contact,
                 team=team,
                 rules=rules,
-                total_seats=total_seats,
-                early_bird_seats=early_bird_seats
+                total_seats=int(total_seats),
+                early_bird_seats=int(early_bird_seats)
             )
             db.session.add(entry)
             db.session.commit()
